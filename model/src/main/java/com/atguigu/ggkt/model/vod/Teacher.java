@@ -8,7 +8,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import java.util.Date;
-
+//7.7/bq.bq
 @Data
 @ApiModel(description = "Teacher")
 @TableName("teacher")
@@ -46,3 +46,4 @@ public class Teacher extends BaseEntity {
 	private Date joinDate;
 
 }
+//7.7/bq.bq

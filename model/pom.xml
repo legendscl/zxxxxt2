@@ -12,11 +12,7 @@
     <artifactId>model</artifactId>
 <!--333-->
 <!--    444-->
-    <properties>
-        <maven.compiler.source>18</maven.compiler.source>
-        <maven.compiler.target>18</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
