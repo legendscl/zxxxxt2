@@ -1,6 +1,7 @@
 package com.atguigu.ggkt.vod.controller;
 
 
+import com.atguigu.ggkt.exception.GgktException;
 import com.atguigu.ggkt.model.vod.Teacher;
 import com.atguigu.ggkt.result.Result;
 import com.atguigu.ggkt.vo.vod.TeacherQueryVo;
@@ -33,9 +34,26 @@ public class TeacherController {
 //        1 查询所有讲师
     @GetMapping("findAll")
     public Result findAllTeacher() {
+        //22.22.bq.bq
+        //模拟异常
+//        try {
+//            int i = 10/0;
+//        }catch (Exception e) {
+//            //抛出异常
+//            throw new GgktException(201,"执行自定义异常处理GgktException");
+//        }
+
+//{
+//  "code": 201,
+//  "message": "执行自定义异常处理GgktException",
+//  "data": null
+//}
+
+
         //调用service方法
         List<Teacher> list = teacherService.list();
         return Result.ok(list).message("查询数据成功");
+
     }
 
 //    2.逻辑删除讲师
@@ -152,6 +170,9 @@ public Result getTeacher(@PathVariable Long id) {
 
 
 }
+//22.22.bq.bq
+
+
 //15.15.bq.bq
 
 

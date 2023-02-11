@@ -66,5 +66,36 @@ public class CodeGet {
         mpg.execute();
     }
 }
+//
+//service——vod的依赖中添加两个dependence
+//<dependency>
+//<groupId>com.baomidou</groupId>
+//<artifactId>mybatis-plus-generator</artifactId>
+//<version>3.3.1</version>
+//</dependency>
+//
+//<dependency>
+//<groupId>org.apache.velocity</groupId>
+//<artifactId>velocity-engine-core</artifactId>
+//<version>2.0</version>
+//</dependency>
+//
+//
+//
+//        在test中复制codeget类（因为这个不需要打包，所以在test中）
+//
+//
+//
+//        gc.setOutputDir("C:\\Users\\scl\\Desktop\\zzzzz\\课程源码-公众号：springmeng\\zxxxxt1\\service\\service_vod"+"/src/main/java");
+//        gc.setServiceName("%sService");//去掉Service接口的首字母I
+//
+//        数据库表和用户名，密码
+//
+//        包配置，设置生成的包名，生成在哪个目录，
+//
+//
+//
+//        总结：只需要一个表，就能创建好对应的实体类
+//
 //2.2.bq.bq
 
