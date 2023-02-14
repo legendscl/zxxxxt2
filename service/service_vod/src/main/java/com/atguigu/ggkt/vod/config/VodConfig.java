@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @MapperScan("com.atguigu.ggkt.vod.mapper")
 public class VodConfig {
-    //14.14.bq.bq
+    //.14.bq.bq
 
     /* 分页插件
      */

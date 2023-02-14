@@ -17,6 +17,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //11.11.bq.bqscanBasePackages = "com.atguigu"扫描别的模块的配置类（swagger带有configuration的配置类）
 public class ServiceVodApplication {
     public static void main(String[] args) {
+
+
         SpringApplication.run(ServiceVodApplication.class, args);
         System.out.println("chenggong");
     }

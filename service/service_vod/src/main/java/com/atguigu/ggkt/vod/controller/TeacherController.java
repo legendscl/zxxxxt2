@@ -28,13 +28,13 @@ import java.util.List;
 @RestController
 //http://localhost:8301/admin/vod/teacher/findAll
 @RequestMapping("/admin/vod/teacher")
+@CrossOrigin //跨域
 public class TeacherController {
         @Autowired
         private TeacherService teacherService;
 //        1 查询所有讲师
     @GetMapping("findAll")
     public Result findAllTeacher() {
-        //22.22.bq.bq
         //模拟异常
 //        try {
 //            int i = 10/0;
@@ -70,47 +70,50 @@ public class TeacherController {
     }
 
 //15.15.bq.bq
-    //3 条件查询分页
-    @ApiOperation("条件查询分页")
-    @PostMapping("findQueryPage/{current}/{limit}")
-    public Result findPage(@PathVariable long current,
-                           @PathVariable long limit,
-                               @RequestBody(required = false) TeacherQueryVo teacherQueryVo) {//teacherQueryVo分页条件
-//        Getmapping，@RequestBody(required = false)，方框内手动输入数据
-//        现在是以为jsion数据提交
-        //创建page对象,
-        Page<Teacher> pageParam = new Page<>(current,limit);
-        //判断teacherQueryVo对象是否为空
-        if(teacherQueryVo == null) {//查询全部
-            IPage<Teacher> pageModel =
-                    teacherService.page(pageParam,null);
-            return Result.ok(pageModel);
-        } else {
-            //获取条件值，
-            String name = teacherQueryVo.getName();
-            Integer level = teacherQueryVo.getLevel();
-            String joinDateBegin = teacherQueryVo.getJoinDateBegin();
-            String joinDateEnd = teacherQueryVo.getJoinDateEnd();
-            //进行非空判断，条件封装
-            QueryWrapper<Teacher> wrapper = new QueryWrapper<>();
-            if(!StringUtils.isEmpty(name)) {
-                wrapper.like("name",name);
-            }
-            if(!StringUtils.isEmpty(level)) {
-                wrapper.eq("level",level);
-            }
-            if(!StringUtils.isEmpty(joinDateBegin)) {
-                wrapper.ge("join_date",joinDateBegin);
-            }
-            if(!StringUtils.isEmpty(joinDateEnd)) {
-                wrapper.le("join_date",joinDateEnd);
-            }
-            //调用方法分页查询
-            IPage<Teacher> pageModel = teacherService.page(pageParam, wrapper);//页数和条件
-            //返回
-            return Result.ok(pageModel);
+//3 条件查询分页
+@ApiOperation("条件查询分页")
+@PostMapping("findQueryPage/{current}/{limit}")
+public Result findPage(@PathVariable long current,
+                       @PathVariable long limit,
+                       @RequestBody(required = false) TeacherQueryVo teacherQueryVo) {
+    //创建page对象,
+    //        Getmapping，@RequestBody(required = false)，方框内手动输入数据
+    ////        现在是以为jsion数据提交
+    Page<Teacher> pageParam = new Page<>(current,limit);
+    //判断teacherQueryVo对象是否为空
+    if(teacherQueryVo == null) {//查询全部
+        IPage<Teacher> pageModel =
+                teacherService.page(pageParam,null);
+        return Result.ok(pageModel);
+    } else {
+        //获取条件值，
+        String name = teacherQueryVo.getName();
+        Integer level = teacherQueryVo.getLevel();
+        String joinDateBegin = teacherQueryVo.getJoinDateBegin();
+        String joinDateEnd = teacherQueryVo.getJoinDateEnd();
+        //进行非空判断，条件封装
+        QueryWrapper<Teacher> wrapper = new QueryWrapper<>();
+        if(!StringUtils.isEmpty(name)) {
+            wrapper.like("name",name);
         }
+        if(!StringUtils.isEmpty(level)) {
+            wrapper.eq("level",level);
+        }
+        if(!StringUtils.isEmpty(joinDateBegin)) {
+            wrapper.ge("join_date",joinDateBegin);
+        }
+        if(!StringUtils.isEmpty(joinDateEnd)) {
+            wrapper.le("join_date",joinDateEnd);
+        }
+        //调用方法分页查询
+        IPage<Teacher> pageModel = teacherService.page(pageParam, wrapper);
+        //返回
+        return Result.ok(pageModel);
     }
+}
+
+
+
      //16.16.bq.bq
     //4 添加讲师
     @ApiOperation("添加讲师")
@@ -170,7 +173,7 @@ public Result getTeacher(@PathVariable Long id) {
 
 
 }
-//22.22.bq.bq
+
 
 
 //15.15.bq.bq

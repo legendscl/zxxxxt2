@@ -47,6 +47,9 @@ public class Result<T> {
         this.setCode(code);
         return this;
     }
+
+
+
 }
 //12.12.bq.bq
 
