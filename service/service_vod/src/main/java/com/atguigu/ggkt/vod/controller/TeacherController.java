@@ -116,6 +116,7 @@ public Result findPage(@PathVariable long current,
 
      //16.16.bq.bq
     //4 添加讲师
+                //29.29.bq.bq
     @ApiOperation("添加讲师")
     @PostMapping("saveTeacher")
     public Result saveTeacher(@RequestBody Teacher teacher) {
@@ -126,6 +127,8 @@ public Result findPage(@PathVariable long current,
             return Result.fail(null);
         }
     }
+                  //29.29.bq.bq
+
 //        16.16.bq.bq
 
 

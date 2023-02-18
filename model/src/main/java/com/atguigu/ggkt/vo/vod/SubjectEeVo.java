@@ -10,6 +10,8 @@ import lombok.Data;
  *
  * @author qy
  */
+
+//.35.bq.bq---excel里的第一行字段
 @Data
 public class SubjectEeVo {
 

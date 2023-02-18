@@ -11,7 +11,7 @@ import lombok.Data;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
+//--30.30.bq.bq--
 @Data
 @ApiModel(description = "Subject")
 @TableName("subject")
