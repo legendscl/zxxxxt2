@@ -8,7 +8,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import java.util.Date;
-//7.7/bq.bq
+///bq.bq
 @Data
 @ApiModel(description = "Teacher")
 @TableName("teacher")
